@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*! elementor - v3.25.0 - 03-11-2024 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
@@ -57,6 +58,12 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+/*! elementor - v3.15.0 - 09-08-2023 */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "../core/common/assets/js/utils/environment.js":
 /*!*****************************************************!*\
   !*** ../core/common/assets/js/utils/environment.js ***!
@@ -138,9 +145,13 @@ var _environment = _interopRequireDefault(__webpack_require__(/*! elementor-comm
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function AdminTopBar() {
+<<<<<<< HEAD
   var _window, _window$elementorNoti, _elementorNotificatio;
   var actionButtonsRef = (0, _react.useRef)(),
     promotion = window.elementorAdminTopBarConfig.promotion;
+=======
+  var actionButtonsRef = (0, _react.useRef)();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
   // Handle Top Bar visibility on initiation: Indicate that the admin top bar is visible and the page content needs to push down below the admin top bar for visibility.
   (0, _react.useEffect)(function () {
@@ -161,9 +172,14 @@ function AdminTopBar() {
   var finderAction = function finderAction() {
     $e.route('finder');
   };
+<<<<<<< HEAD
   var controlSign = _environment.default.mac ? "\u2318" : '^';
   var finderTooltipText = __('Search or do anything in Elementor', 'elementor') + " ".concat(controlSign, "+E");
   var BarButtonNotification = (_window = window) === null || _window === void 0 ? void 0 : (_window$elementorNoti = _window.elementorNotificationCenter) === null || _window$elementorNoti === void 0 ? void 0 : _window$elementorNoti.BarButtonNotification;
+=======
+  var controlSign = _environment.default.mac ? '&#8984;' : '^';
+  var finderTooltipText = __('Search or do anything in Elementor', 'elementor') + " ".concat(controlSign, "+E");
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "e-admin-top-bar"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -175,6 +191,7 @@ function AdminTopBar() {
     className: "e-admin-top-bar__secondary-area"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "e-admin-top-bar__secondary-area-buttons"
+<<<<<<< HEAD
   }, !elementorAppConfig.hasPro && /*#__PURE__*/_react.default.createElement(_barButton.default, {
     additionalClasses: "accent",
     href: promotion.url,
@@ -191,6 +208,16 @@ function AdminTopBar() {
   }, __('Finder', 'elementor')) : '', window.elementorCloudAdmin ? window.elementorCloudAdmin() : '', BarButtonNotification ? /*#__PURE__*/_react.default.createElement(BarButtonNotification, {
     defaultIsRead: !((_elementorNotificatio = elementorNotifications) !== null && _elementorNotificatio !== void 0 && _elementorNotificatio.is_unread)
   }, __('What\'s New', 'elementor')) : ''), /*#__PURE__*/_react.default.createElement(_connectionButton.default, null)));
+=======
+  }, /*#__PURE__*/_react.default.createElement(_barButton.default, {
+    href: window.elementorAdminTopBarConfig.apps_url,
+    icon: "eicon-integration"
+  }, __('Apps', 'elementor')), window.elementorAdminTopBarConfig.is_administrator ? /*#__PURE__*/_react.default.createElement(_barButton.default, {
+    onClick: finderAction,
+    dataInfo: finderTooltipText,
+    icon: "eicon-search-bold"
+  }, __('Finder', 'elementor')) : '', window.elementorCloudAdmin ? window.elementorCloudAdmin() : ''), /*#__PURE__*/_react.default.createElement(_connectionButton.default, null)));
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 }
 
 /***/ }),
@@ -229,14 +256,22 @@ function BarButton(props) {
     }
   }, []);
   return /*#__PURE__*/_react.default.createElement("a", {
+<<<<<<< HEAD
     className: "e-admin-top-bar__bar-button ".concat(props.additionalClasses),
+=======
+    className: "e-admin-top-bar__bar-button",
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
     ref: props.buttonRef,
     onClick: props.onClick,
     "data-info": props.dataInfo,
     href: props.href,
     target: props.target
   }, /*#__PURE__*/_react.default.createElement("i", {
+<<<<<<< HEAD
     className: "e-admin-top-bar__bar-button-icon ".concat(props.icon, " ").concat(props.iconAdditionalClasses)
+=======
+    className: "e-admin-top-bar__bar-button-icon ".concat(props.icon)
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
   }), /*#__PURE__*/_react.default.createElement("span", {
     className: "e-admin-top-bar__bar-button-title"
   }, props.children));
@@ -248,9 +283,13 @@ BarButton.propTypes = {
   onClick: PropTypes.func,
   buttonRef: PropTypes.object,
   href: PropTypes.string,
+<<<<<<< HEAD
   target: PropTypes.string,
   additionalClasses: PropTypes.string,
   iconAdditionalClasses: PropTypes.string
+=======
+  target: PropTypes.string
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 };
 
 /***/ }),
@@ -1476,6 +1515,7 @@ if (false) {} else {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../node_modules/react-dom/client.js":
 /*!*******************************************!*\
   !*** ../node_modules/react-dom/client.js ***!
@@ -1509,6 +1549,8 @@ if (false) {} else {
 
 /***/ }),
 
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "react":
 /*!************************!*\
   !*** external "React" ***!
@@ -1591,6 +1633,7 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
   \**********************************************************************/
 /***/ ((module) => {
 
+<<<<<<< HEAD
 function _iterableToArrayLimit(r, l) {
   var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
   if (null != t) {
@@ -1616,6 +1659,33 @@ function _iterableToArrayLimit(r, l) {
       }
     }
     return a;
+=======
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
   }
 }
 module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -1658,6 +1728,7 @@ module.exports = _slicedToArray, module.exports.__esModule = true, module.export
   \********************************************************/
 /***/ ((module) => {
 
+<<<<<<< HEAD
 function _typeof(o) {
   "@babel/helpers - typeof";
 
@@ -1666,6 +1737,16 @@ function _typeof(o) {
   } : function (o) {
     return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
   }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+=======
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -1724,15 +1805,33 @@ var __webpack_exports__ = {};
 /*!***************************************************!*\
   !*** ../modules/admin-top-bar/assets/js/admin.js ***!
   \***************************************************/
+<<<<<<< HEAD
+=======
+/* provided dependency */ var ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+<<<<<<< HEAD
 var _react2 = _interopRequireDefault(__webpack_require__(/*! elementor-utils/react */ "../assets/dev/js/utils/react.js"));
 var _adminTopBar = _interopRequireDefault(__webpack_require__(/*! ./admin-top-bar */ "../modules/admin-top-bar/assets/js/admin-top-bar.js"));
 var AppWrapper = elementorCommon.config.isDebug ? _react.default.StrictMode : _react.default.Fragment;
 var adminTopBarElement = document.getElementById('e-admin-top-bar-root');
 _react2.default.render( /*#__PURE__*/_react.default.createElement(AppWrapper, null, /*#__PURE__*/_react.default.createElement(_adminTopBar.default, null)), adminTopBarElement);
+=======
+var _adminTopBar = _interopRequireDefault(__webpack_require__(/*! ./admin-top-bar */ "../modules/admin-top-bar/assets/js/admin-top-bar.js"));
+var AppWrapper = elementorCommon.config.isDebug ? _react.default.StrictMode : _react.default.Fragment;
+var adminTopBarElement = document.getElementById('e-admin-top-bar-root');
+var elementorMenuItemIds = ['toplevel_page_elementor', 'menu-posts-elementor_library'];
+var menuItemSelector = elementorMenuItemIds.map(function (itemId) {
+  return "#".concat(itemId, " .wp-menu-open");
+}).join(', ');
+var isElementorPage = !!document.querySelector(menuItemSelector);
+if (isElementorPage) {
+  ReactDOM.render( /*#__PURE__*/_react.default.createElement(AppWrapper, null, /*#__PURE__*/_react.default.createElement(_adminTopBar.default, null)), adminTopBarElement);
+}
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 })();
 
 /******/ })()

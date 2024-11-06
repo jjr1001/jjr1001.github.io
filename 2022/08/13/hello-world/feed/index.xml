@@ -16,7 +16,11 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
+<<<<<<< HEAD
 	<generator>https://wordpress.org/?v=6.6.2</generator>
+=======
+	<generator>https://wordpress.org/?v=6.3</generator>
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 	<item>
 		<title>
 		By: A WordPress Commenter		</title>

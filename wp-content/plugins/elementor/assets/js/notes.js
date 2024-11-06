@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*! elementor - v3.25.0 - 03-11-2024 */
+=======
+/*! elementor - v3.15.0 - 09-08-2023 */
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -149,7 +153,11 @@ var NotesAddPanelMenuItem = /*#__PURE__*/function (_$e$modules$hookUI$Af) {
             },
             targetElement: this.$el,
             actionButton: {
+<<<<<<< HEAD
               url: hasProAndNotConnected ? elementorProEditorConfig.urls.connect : elementor.config.promotions.notes.upgrade_url || 'https://go.elementor.com/go-pro-notes/',
+=======
+              url: hasProAndNotConnected ? elementorProEditorConfig.urls.connect : 'https://go.elementor.com/go-pro-notes/',
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
               text: hasProAndNotConnected ? __('Connect & Activate', 'elementor') : __('Upgrade', 'elementor')
             }
           });
@@ -233,7 +241,10 @@ var NotesContextMenu = /*#__PURE__*/function (_elementorModules$edi) {
           name: 'open_notes',
           title: __('Notes', 'elementor'),
           shortcut: '<i class="eicon-pro-icon"></i>',
+<<<<<<< HEAD
           promotionURL: 'https://go.elementor.com/go-pro-notes-context-menu/',
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
           isEnabled: function isEnabled() {
             return false;
           },
@@ -445,6 +456,7 @@ module.exports = _setPrototypeOf, module.exports.__esModule = true, module.expor
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
+<<<<<<< HEAD
 function toPrimitive(t, r) {
   if ("object" != _typeof(t) || !t) return t;
   var e = t[Symbol.toPrimitive];
@@ -456,6 +468,19 @@ function toPrimitive(t, r) {
   return ("string" === r ? String : Number)(t);
 }
 module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+=======
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
 /***/ }),
 
@@ -467,11 +492,19 @@ module.exports = toPrimitive, module.exports.__esModule = true, module.exports["
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "../node_modules/@babel/runtime/helpers/toPrimitive.js");
+<<<<<<< HEAD
 function toPropertyKey(t) {
   var i = toPrimitive(t, "string");
   return "symbol" == _typeof(i) ? i : String(i);
 }
 module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+=======
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
 /***/ }),
 
@@ -481,6 +514,7 @@ module.exports = toPropertyKey, module.exports.__esModule = true, module.exports
   \********************************************************/
 /***/ ((module) => {
 
+<<<<<<< HEAD
 function _typeof(o) {
   "@babel/helpers - typeof";
 
@@ -489,6 +523,16 @@ function _typeof(o) {
   } : function (o) {
     return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
   }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+=======
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 

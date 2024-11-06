@@ -4014,12 +4014,15 @@ readers do not read off random characters that represent icons */
 .fa-tired:before {
   content: "\f5c8"; }
 
+<<<<<<< HEAD
 .fa-threads:before {
   content: '\e9cb'; }
 
 .fa-threads-square:before {
   content: '\e9cc'; }
 
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 .fa-toggle-off:before {
   content: "\f204"; }
 
@@ -4533,12 +4536,15 @@ readers do not read off random characters that represent icons */
 .fa-xing-square:before {
   content: "\f169"; }
 
+<<<<<<< HEAD
 .fa-x-twitter:before {
   content: "\e9ca"; }
 
 .fa-x-twitter-square:before {
   content: "\e9c9"; }
 
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 .fa-y-combinator:before {
   content: "\f23b"; }
 

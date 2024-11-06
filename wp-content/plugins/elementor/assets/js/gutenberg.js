@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*! elementor - v3.25.0 - 03-11-2024 */
+=======
+/*! elementor - v3.15.0 - 09-08-2023 */
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -74,6 +78,7 @@ var __webpack_exports__ = {};
       if (!self.cache.$gutenberg.find('#elementor-switch-mode').length) {
         self.cache.$gutenberg.find('.edit-post-header-toolbar').append(self.cache.$switchMode);
       }
+<<<<<<< HEAD
       if (this.hasIframe()) {
         this.handleIframe();
       }
@@ -138,6 +143,33 @@ var __webpack_exports__ = {};
         wp.data.dispatch('core/editor').savePost();
       }
       self.redirectWhenSave();
+=======
+      if (!$('#elementor-editor').length) {
+        self.cache.$editorPanel = $($('#elementor-gutenberg-panel').html());
+        // TODO: `editor-block-list__layout` class for WP < 5.3 support.
+        self.cache.$gurenbergBlockList = self.cache.$gutenberg.find('.editor-block-list__layout, .editor-post-text-editor, .block-editor-block-list__layout');
+        self.cache.$gurenbergBlockList.after(self.cache.$editorPanel);
+        self.cache.$editorPanelButton = self.cache.$editorPanel.find('#elementor-go-to-edit-page-link');
+        self.cache.$editorPanelButton.on('click', function (event) {
+          event.preventDefault();
+          self.animateLoader();
+
+          // A new post is initialized as an 'auto-draft'.
+          // if the post is not a new post it should not save it to avoid some saving conflict between elementor and gutenberg.
+          var isNewPost = 'auto-draft' === wp.data.select('core/editor').getCurrentPost().status;
+          if (isNewPost) {
+            var documentTitle = wp.data.select('core/editor').getEditedPostAttribute('title');
+            if (!documentTitle) {
+              wp.data.dispatch('core/editor').editPost({
+                title: 'Elementor #' + $('#post_ID').val()
+              });
+            }
+            wp.data.dispatch('core/editor').savePost();
+          }
+          self.redirectWhenSave();
+        });
+      }
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
     },
     bindEvents: function bindEvents() {
       var self = this;

@@ -2,9 +2,13 @@
  * Select2 4.0.6-rc.1
  * https://select2.github.io
  *
+<<<<<<< HEAD
  * With a fix by Elementor team at lines 4329, 5449.
  * Also deprecated jQuery features fixed at lines: 1477, 1479, 1617, 2111, 2113, 3244, 3548, 3573, 3632, 3708, 3801,
  * 4047, 4050, 4058, 4063, 4873, 4936, 5395, 5693, 5772, 5785, 5826, 5852, 5883, 5909, 5956, 6103, 6346, 6350.
+=======
+ * With a fix by Elementor team at line 4329 and 5449
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
  *
  * Released under the MIT license
  * https://github.com/select2/select2/blob/master/LICENSE.md
@@ -1474,9 +1478,15 @@ S2.define('select2/selection/base',[
       self.$selection.removeAttr('aria-activedescendant');
       self.$selection.removeAttr('aria-owns');
 
+<<<<<<< HEAD
       self.$selection.trigger('focus');
       window.setTimeout(function () {
         self.$selection.trigger('focus');
+=======
+      self.$selection.focus();
+      window.setTimeout(function () {
+        self.$selection.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       }, 0);
 
       self._detachCloseHandler(container);
@@ -1614,7 +1624,11 @@ S2.define('select2/selection/single',[
 
     container.on('focus', function (evt) {
       if (!container.isOpen()) {
+<<<<<<< HEAD
         self.$selection.trigger('focus');
+=======
+        self.$selection.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       }
     });
   };
@@ -2108,9 +2122,15 @@ S2.define('select2/selection/search',[
       var isTagInput = this.$element.find('[data-select2-tag]').length;
       if (isTagInput) {
         // fix IE11 bug where tag input lost focus
+<<<<<<< HEAD
         this.$element.trigger('focus');
       } else {
         this.$search.trigger('focus');
+=======
+        this.$element.focus();
+      } else {
+        this.$search.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       }
     }
   };
@@ -3545,7 +3565,11 @@ S2.define('select2/data/ajax',[
 
     if (this._request != null) {
       // JSONP requests cannot always be aborted
+<<<<<<< HEAD
       if (typeof this._request.abort === 'function') {
+=======
+      if ($.isFunction(this._request.abort)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         this._request.abort();
       }
 
@@ -3570,7 +3594,11 @@ S2.define('select2/data/ajax',[
 
         if (self.options.get('debug') && window.console && console.error) {
           // Check to make sure that the response included a `results` key.
+<<<<<<< HEAD
           if (!results || !results.results || !Array.isArray(results.results)) {
+=======
+          if (!results || !results.results || !$.isArray(results.results)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
             console.error(
               'Select2: The AJAX results did not return an array in the ' +
               '`results` key of the response.'
@@ -3629,7 +3657,11 @@ S2.define('select2/data/tags',[
 
     decorated.call(this, $element, options);
 
+<<<<<<< HEAD
     if (Array.isArray(tags)) {
+=======
+    if ($.isArray(tags)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       for (var t = 0; t < tags.length; t++) {
         var tag = tags[t];
         var item = this._normalizeItem(tag);
@@ -3705,7 +3737,11 @@ S2.define('select2/data/tags',[
   };
 
   Tags.prototype.createTag = function (decorated, params) {
+<<<<<<< HEAD
     var term = (params?.term ?? '').trim();
+=======
+    var term = $.trim(params.term);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
     if (term === '') {
       return null;
@@ -3798,7 +3834,11 @@ S2.define('select2/data/tokenizer',[
       // Replace the search term if we have the search box
       if (this.$search.length) {
         this.$search.val(tokenData.term);
+<<<<<<< HEAD
         this.$search.trigger('focus');
+=======
+        this.$search.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       }
 
       params.term = tokenData.term;
@@ -4044,10 +4084,17 @@ S2.define('select2/dropdown/search',[
     container.on('open', function () {
       self.$search.attr('tabindex', 0);
 
+<<<<<<< HEAD
       self.$search.trigger('focus');
 
       window.setTimeout(function () {
         self.$search.trigger('focus');
+=======
+      self.$search.focus();
+
+      window.setTimeout(function () {
+        self.$search.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       }, 0);
     });
 
@@ -4055,12 +4102,20 @@ S2.define('select2/dropdown/search',[
       self.$search.attr('tabindex', -1);
 
       self.$search.val('');
+<<<<<<< HEAD
       self.$search.trigger('blur');
+=======
+      self.$search.blur();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
     });
 
     container.on('focus', function () {
       if (!container.isOpen()) {
+<<<<<<< HEAD
         self.$search.trigger('focus');
+=======
+        self.$search.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       }
     });
 
@@ -4870,7 +4925,11 @@ S2.define('select2/defaults',[
       }
     }
 
+<<<<<<< HEAD
     if (Array.isArray(options.language)) {
+=======
+    if ($.isArray(options.language)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       var languages = new Translation();
       options.language.push('en');
 
@@ -4933,7 +4992,11 @@ S2.define('select2/defaults',[
 
     function matcher (params, data) {
       // Always return the object if there is nothing to compare
+<<<<<<< HEAD
       if ((params?.term ?? '').trim() === '') {
+=======
+      if ($.trim(params.term) === '') {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         return data;
       }
 
@@ -5690,7 +5753,11 @@ S2.define('select2/core',[
 
     var newVal = args[0];
 
+<<<<<<< HEAD
     if (Array.isArray(newVal)) {
+=======
+    if ($.isArray(newVal)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       newVal = $.map(newVal, function (obj) {
         return obj.toString();
       });
@@ -5769,7 +5836,11 @@ S2.define('select2/compat/utils',[
   function syncCssClasses ($dest, $src, adapter) {
     var classes, replacements = [], adapted;
 
+<<<<<<< HEAD
     classes = ($dest?.attr('class') ?? '').trim();
+=======
+    classes = $.trim($dest.attr('class'));
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
     if (classes) {
       classes = '' + classes; // for IE which returns object
@@ -5782,7 +5853,11 @@ S2.define('select2/compat/utils',[
       });
     }
 
+<<<<<<< HEAD
     classes = ($src?.attr('class') ?? '').trim();
+=======
+    classes = $.trim($src.attr('class'));
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
     if (classes) {
       classes = '' + classes; // for IE which returns object
@@ -5823,7 +5898,11 @@ S2.define('select2/compat/containerCss',[
 
     var containerCssClass = this.options.get('containerCssClass') || '';
 
+<<<<<<< HEAD
     if (typeof containerCssClass === 'function') {
+=======
+    if ($.isFunction(containerCssClass)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       containerCssClass = containerCssClass(this.$element);
     }
 
@@ -5849,7 +5928,11 @@ S2.define('select2/compat/containerCss',[
 
     var containerCss = this.options.get('containerCss') || {};
 
+<<<<<<< HEAD
     if (typeof containerCss === 'function') {
+=======
+    if ($.isFunction(containerCss)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       containerCss = containerCss(this.$element);
     }
 
@@ -5880,7 +5963,11 @@ S2.define('select2/compat/dropdownCss',[
 
     var dropdownCssClass = this.options.get('dropdownCssClass') || '';
 
+<<<<<<< HEAD
     if (typeof dropdownCssClass === 'function') {
+=======
+    if ($.isFunction(dropdownCssClass)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       dropdownCssClass = dropdownCssClass(this.$element);
     }
 
@@ -5906,7 +5993,11 @@ S2.define('select2/compat/dropdownCss',[
 
     var dropdownCss = this.options.get('dropdownCss') || {};
 
+<<<<<<< HEAD
     if (typeof dropdownCss === 'function') {
+=======
+    if ($.isFunction(dropdownCss)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       dropdownCss = dropdownCss(this.$element);
     }
 
@@ -5953,7 +6044,11 @@ S2.define('select2/compat/initSelection',[
     this.initSelection.call(null, this.$element, function (data) {
       self._isInitialized = true;
 
+<<<<<<< HEAD
       if (!Array.isArray(data)) {
+=======
+      if (!$.isArray(data)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         data = [data];
       }
 
@@ -6100,7 +6195,11 @@ S2.define('select2/compat/matcher',[
     function wrappedMatcher (params, data) {
       var match = $.extend(true, {}, data);
 
+<<<<<<< HEAD
       if (params.term == null || (params?.term ?? '').trim() === '') {
+=======
+      if (params.term == null || $.trim(params.term) === '') {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         return match;
       }
 
@@ -6343,11 +6442,19 @@ S2.define('select2/selection/stopPropagation',[
 
     $.fn.extend({
         mousewheel: function(fn) {
+<<<<<<< HEAD
             return fn ? this.on('mousewheel', fn) : this.trigger('mousewheel');
         },
 
         unmousewheel: function(fn) {
             return this.off('mousewheel', fn);
+=======
+            return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
+        },
+
+        unmousewheel: function(fn) {
+            return this.unbind('mousewheel', fn);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         }
     });
 

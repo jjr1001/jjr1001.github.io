@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * Dialogs Manager v4.9.3
+=======
+ * Dialogs Manager v4.9.0
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
  * https://github.com/kobizz/dialogs-manager
  *
  * Copyright Kobi Zaltzberg
@@ -103,6 +107,7 @@
 			return Object.create(settings);
 		};
 
+<<<<<<< HEAD
 		this.maybeLoadAssets = async function () {
 			const isFrontend = !! window.elementorFrontend?.utils?.assetsLoader;
 
@@ -120,6 +125,9 @@
 		this.init = function (settings) {
 
 			this.maybeLoadAssets();
+=======
+		this.init = function(settings) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
 			initSettings(settings);
 
@@ -179,7 +187,11 @@
 			var effect = settings.effects[intent],
 				$widget = elements.widget;
 
+<<<<<<< HEAD
 			if ('function' === typeof effect) {
+=======
+			if ($.isFunction(effect)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 				effect.apply($widget, params);
 			} else {
 
@@ -352,10 +364,17 @@
 				classes: {
 					globalPrefix: parentSettings.classPrefix,
 					prefix: parentSettings.classPrefix + '-' + widgetName,
+<<<<<<< HEAD
 					preventScroll: parentSettings.classPrefix + '-prevent-scroll',
 				},
 				selectors: {
 					preventClose: '.' + parentSettings.classPrefix + '-prevent-close',
+=======
+					preventScroll: parentSettings.classPrefix + '-prevent-scroll'
+				},
+				selectors: {
+					preventClose: '.' + parentSettings.classPrefix + '-prevent-close'
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 				},
 				container: 'body',
 				preventScroll: false,
@@ -367,7 +386,11 @@
 						role: 'button',
 						'tabindex': 0,
 						'aria-label': 'Close',
+<<<<<<< HEAD
 						href: '#',
+=======
+						href: 'javascript:void(0);',
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 					},
 					iconElement: '<i>',
 				},
@@ -376,7 +399,11 @@
 					my: 'center',
 					at: 'center',
 					enable: true,
+<<<<<<< HEAD
 					autoRefresh: false,
+=======
+					autoRefresh: false
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 				},
 				hide: {
 					auto: false,
@@ -386,7 +413,11 @@
 					onOutsideContextMenu: false,
 					onBackgroundClick: true,
 					onEscKeyPress: true,
+<<<<<<< HEAD
 					ignore: '',
+=======
+					ignore: ''
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 				},
 			};
 
@@ -727,8 +758,12 @@
 		var self = this;
 
 		if (self.getSettings('closeButton')) {
+<<<<<<< HEAD
 			self.getElements('closeButton').on('click', function(event) {
 				event.preventDefault();
+=======
+			self.getElements('closeButton').on('click', function() {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 				self.hide();
 			});
 		}
@@ -801,7 +836,11 @@
 					}
 				}
 
+<<<<<<< HEAD
 				this.focusedButton = this.buttons[nextButtonIndex].trigger('focus');
+=======
+				this.focusedButton = this.buttons[nextButtonIndex].focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 			}
 		},
 		addButton: function(options) {
@@ -824,7 +863,11 @@
 					self.hide();
 				}
 
+<<<<<<< HEAD
 				if ('function' === typeof options.callback) {
+=======
+				if ($.isFunction(options.callback)) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 					options.callback.call(this, self);
 				}
 			};
@@ -897,7 +940,11 @@
 			}
 
 			if (this.focusedButton) {
+<<<<<<< HEAD
 				this.focusedButton.trigger('focus');
+=======
+				this.focusedButton.focus();
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 			}
 		},
 		unbindHotKeys: function() {

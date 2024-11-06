@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*! elementor - v3.25.0 - 03-11-2024 */
+=======
+/*! elementor - v3.15.0 - 09-08-2023 */
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -272,6 +276,7 @@ var FilesUploadHandler = /*#__PURE__*/function () {
       frame.uploader.uploader.param('uploadTypeCaller', 'elementor-wp-media-upload');
     }
   }, {
+<<<<<<< HEAD
     key: "getUnfilteredFilesNonAdminDialog",
     value: function getUnfilteredFilesNonAdminDialog() {
       return elementorCommon.dialogsManager.createWidget('alert', {
@@ -290,19 +295,30 @@ var FilesUploadHandler = /*#__PURE__*/function () {
       if (!elementorInstance.config.user.is_administrator) {
         return this.getUnfilteredFilesNonAdminDialog();
       }
+=======
+    key: "getUnfilteredFilesNotEnabledDialog",
+    value: function getUnfilteredFilesNotEnabledDialog(callback) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       var onConfirm = function onConfirm() {
         elementorCommon.ajax.addRequest('enable_unfiltered_files_upload', {}, true);
         elementorCommon.config.filesUpload.unfilteredFiles = true;
         callback();
       };
+<<<<<<< HEAD
       return elementorInstance.helpers.getSimpleDialog('e-enable-unfiltered-files-dialog', __('Enable Unfiltered File Uploads', 'elementor'), __('Before you enable unfiltered files upload, note that such files include a security risk. Elementor does run a process to remove possible malicious code, but there is still risk involved when using such files.', 'elementor'), __('Enable', 'elementor'), onConfirm);
+=======
+      return elementor.helpers.getSimpleDialog('e-enable-unfiltered-files-dialog', __('Enable Unfiltered File Uploads', 'elementor'), __('Before you enable unfiltered files upload, note that such files include a security risk. Elementor does run a process to remove possible malicious code, but there is still risk involved when using such files.', 'elementor'), __('Enable', 'elementor'), onConfirm);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
     }
   }, {
     key: "getUnfilteredFilesNotEnabledImportTemplateDialog",
     value: function getUnfilteredFilesNotEnabledImportTemplateDialog(callback) {
+<<<<<<< HEAD
       if (!(window.elementorAdmin || window.elementor).config.user.is_administrator) {
         return this.getUnfilteredFilesNonAdminDialog();
       }
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       return elementorCommon.dialogsManager.createWidget('confirm', {
         id: 'e-enable-unfiltered-files-dialog-import-template',
         headerMessage: __('Enable Unfiltered File Uploads', 'elementor'),
@@ -606,6 +622,10 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports["default"] = void 0;
+<<<<<<< HEAD
+=======
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "../node_modules/@babel/runtime/helpers/toConsumableArray.js"));
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js"));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js"));
@@ -774,6 +794,7 @@ var ExperimentsMessages = /*#__PURE__*/function () {
       }).show();
     }
   }, {
+<<<<<<< HEAD
     key: "getSiteLanguageCode",
     value: function getSiteLanguageCode() {
       var languageCode = document.querySelector('html').getAttribute('lang');
@@ -787,6 +808,24 @@ var ExperimentsMessages = /*#__PURE__*/function () {
       });
       var languageCode = this.getSiteLanguageCode();
       return new Intl.ListFormat(languageCode).format(dependenciesTitles);
+=======
+    key: "joinDependenciesNames",
+    value: function joinDependenciesNames(array) {
+      var glue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var finalGlue = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+      if ('' === finalGlue) {
+        return array.join(glue);
+      }
+      if (!array.length) {
+        return '';
+      }
+      if (1 === array.length) {
+        return array[0];
+      }
+      var clone = (0, _toConsumableArray2.default)(array),
+        lastItem = clone.pop();
+      return clone.join(glue) + finalGlue + lastItem;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
     }
   }, {
     key: "showDependenciesDialog",
@@ -794,10 +833,19 @@ var ExperimentsMessages = /*#__PURE__*/function () {
       var _this5 = this;
       var experiment = this.getExperimentData(experimentId),
         experimentName = experiment.title,
+<<<<<<< HEAD
         dependenciesList = this.formatDependenciesList(this.getExperimentDependencies(experimentId));
 
       // Translators: %1$s: Experiment title, %2$s: Comma-separated dependencies list
       var message = __('In order to use %1$s, first you need to activate %2$s.', 'elementor').replace('%1$s', "<strong>".concat(experimentName, "</strong>")).replace('%2$s', dependenciesList);
+=======
+        dialogMessage = this.joinDependenciesNames(this.getExperimentDependencies(experimentId).map(function (d) {
+          return d.title;
+        }));
+
+      // Translators: %1$s: Experiment title, %2$s: Comma-separated dependencies list
+      var message = __('In order to use %1$s, first you need to activate %2$s.', 'elementor').replace('%1$s', "<strong>".concat(experimentName, "</strong>")).replace('%2$s', dialogMessage);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       this.showDialog({
         message: message,
         headerMessage: __('First, activate another experiment.', 'elementor'),
@@ -825,7 +873,11 @@ var ExperimentsMessages = /*#__PURE__*/function () {
         headerMessage: __('Are you sure?', 'elementor'),
         strings: {
           confirm: __('Deactivate', 'elementor'),
+<<<<<<< HEAD
           cancel: __('Cancel', 'elementor')
+=======
+          cancel: __('Dismiss', 'elementor')
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         },
         onConfirm: function onConfirm() {
           _this6.setExperimentState(experimentId, STATE_INACTIVE);
@@ -961,6 +1013,7 @@ exports["default"] = ExperimentsModule;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/floating-buttons/assets/js/floating-buttons/admin/floating-buttons.js":
 /*!****************************************************************************************!*\
   !*** ../modules/floating-buttons/assets/js/floating-buttons/admin/floating-buttons.js ***!
@@ -1103,6 +1156,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "../modules/landing-pages/assets/js/admin/landing-pages.js":
 /*!*****************************************************************!*\
   !*** ../modules/landing-pages/assets/js/admin/landing-pages.js ***!
@@ -1288,6 +1343,23 @@ module.exports = _arrayWithHoles, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "../node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!*******************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "../node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "../node_modules/@babel/runtime/helpers/assertThisInitialized.js":
 /*!***********************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
@@ -1497,12 +1569,29 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "../node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!*****************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \*****************************************************************/
+/***/ ((module) => {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+module.exports = _iterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
 /*!**********************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
   \**********************************************************************/
 /***/ ((module) => {
 
+<<<<<<< HEAD
 function _iterableToArrayLimit(r, l) {
   var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
   if (null != t) {
@@ -1528,6 +1617,33 @@ function _iterableToArrayLimit(r, l) {
       }
     }
     return a;
+=======
+function _iterableToArrayLimit(arr, i) {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
+    try {
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
+    } finally {
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
   }
 }
 module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -1547,6 +1663,22 @@ module.exports = _nonIterableRest, module.exports.__esModule = true, module.expo
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "../node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!*******************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \*******************************************************************/
+/***/ ((module) => {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+module.exports = _nonIterableSpread, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
 /*!***************************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
@@ -1577,6 +1709,7 @@ var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/ru
 function _regeneratorRuntime() {
   "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
   module.exports = _regeneratorRuntime = function _regeneratorRuntime() {
+<<<<<<< HEAD
     return e;
   }, module.exports.__esModule = true, module.exports["default"] = module.exports;
   var t,
@@ -1827,10 +1960,263 @@ function _regeneratorRuntime() {
           } else {
             if (!u) throw new Error("try statement without catch or finally");
             if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
+=======
+    return exports;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  var exports = {},
+    Op = Object.prototype,
+    hasOwn = Op.hasOwnProperty,
+    defineProperty = Object.defineProperty || function (obj, key, desc) {
+      obj[key] = desc.value;
+    },
+    $Symbol = "function" == typeof Symbol ? Symbol : {},
+    iteratorSymbol = $Symbol.iterator || "@@iterator",
+    asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator",
+    toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+  function define(obj, key, value) {
+    return Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }), obj[key];
+  }
+  try {
+    define({}, "");
+  } catch (err) {
+    define = function define(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator,
+      generator = Object.create(protoGenerator.prototype),
+      context = new Context(tryLocsList || []);
+    return defineProperty(generator, "_invoke", {
+      value: makeInvokeMethod(innerFn, self, context)
+    }), generator;
+  }
+  function tryCatch(fn, obj, arg) {
+    try {
+      return {
+        type: "normal",
+        arg: fn.call(obj, arg)
+      };
+    } catch (err) {
+      return {
+        type: "throw",
+        arg: err
+      };
+    }
+  }
+  exports.wrap = wrap;
+  var ContinueSentinel = {};
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+  var IteratorPrototype = {};
+  define(IteratorPrototype, iteratorSymbol, function () {
+    return this;
+  });
+  var getProto = Object.getPrototypeOf,
+    NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype);
+  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function (method) {
+      define(prototype, method, function (arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if ("throw" !== record.type) {
+        var result = record.arg,
+          value = result.value;
+        return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) {
+          invoke("next", value, resolve, reject);
+        }, function (err) {
+          invoke("throw", err, resolve, reject);
+        }) : PromiseImpl.resolve(value).then(function (unwrapped) {
+          result.value = unwrapped, resolve(result);
+        }, function (error) {
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+      reject(record.arg);
+    }
+    var previousPromise;
+    defineProperty(this, "_invoke", {
+      value: function value(method, arg) {
+        function callInvokeWithMethodAndArg() {
+          return new PromiseImpl(function (resolve, reject) {
+            invoke(method, arg, resolve, reject);
+          });
+        }
+        return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+      }
+    });
+  }
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = "suspendedStart";
+    return function (method, arg) {
+      if ("executing" === state) throw new Error("Generator is already running");
+      if ("completed" === state) {
+        if ("throw" === method) throw arg;
+        return doneResult();
+      }
+      for (context.method = method, context.arg = arg;;) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+        if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) {
+          if ("suspendedStart" === state) throw state = "completed", context.arg;
+          context.dispatchException(context.arg);
+        } else "return" === context.method && context.abrupt("return", context.arg);
+        state = "executing";
+        var record = tryCatch(innerFn, self, context);
+        if ("normal" === record.type) {
+          if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue;
+          return {
+            value: record.arg,
+            done: context.done
+          };
+        }
+        "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg);
+      }
+    };
+  }
+  function maybeInvokeDelegate(delegate, context) {
+    var methodName = context.method,
+      method = delegate.iterator[methodName];
+    if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel;
+    var record = tryCatch(method, delegate.iterator, context.arg);
+    if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel;
+    var info = record.arg;
+    return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel);
+  }
+  function pushTryEntry(locs) {
+    var entry = {
+      tryLoc: locs[0]
+    };
+    1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry);
+  }
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal", delete record.arg, entry.completion = record;
+  }
+  function Context(tryLocsList) {
+    this.tryEntries = [{
+      tryLoc: "root"
+    }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0);
+  }
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) return iteratorMethod.call(iterable);
+      if ("function" == typeof iterable.next) return iterable;
+      if (!isNaN(iterable.length)) {
+        var i = -1,
+          next = function next() {
+            for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next;
+            return next.value = undefined, next.done = !0, next;
+          };
+        return next.next = next;
+      }
+    }
+    return {
+      next: doneResult
+    };
+  }
+  function doneResult() {
+    return {
+      value: undefined,
+      done: !0
+    };
+  }
+  return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", {
+    value: GeneratorFunctionPrototype,
+    configurable: !0
+  }), defineProperty(GeneratorFunctionPrototype, "constructor", {
+    value: GeneratorFunction,
+    configurable: !0
+  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) {
+    var ctor = "function" == typeof genFun && genFun.constructor;
+    return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name));
+  }, exports.mark = function (genFun) {
+    return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun;
+  }, exports.awrap = function (arg) {
+    return {
+      __await: arg
+    };
+  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+    return this;
+  }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    void 0 === PromiseImpl && (PromiseImpl = Promise);
+    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
+    return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) {
+      return result.done ? result.value : iter.next();
+    });
+  }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () {
+    return this;
+  }), define(Gp, "toString", function () {
+    return "[object Generator]";
+  }), exports.keys = function (val) {
+    var object = Object(val),
+      keys = [];
+    for (var key in object) keys.push(key);
+    return keys.reverse(), function next() {
+      for (; keys.length;) {
+        var key = keys.pop();
+        if (key in object) return next.value = key, next.done = !1, next;
+      }
+      return next.done = !0, next;
+    };
+  }, exports.values = values, Context.prototype = {
+    constructor: Context,
+    reset: function reset(skipTempReset) {
+      if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined);
+    },
+    stop: function stop() {
+      this.done = !0;
+      var rootRecord = this.tryEntries[0].completion;
+      if ("throw" === rootRecord.type) throw rootRecord.arg;
+      return this.rval;
+    },
+    dispatchException: function dispatchException(exception) {
+      if (this.done) throw exception;
+      var context = this;
+      function handle(loc, caught) {
+        return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught;
+      }
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i],
+          record = entry.completion;
+        if ("root" === entry.tryLoc) return handle("end");
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc"),
+            hasFinally = hasOwn.call(entry, "finallyLoc");
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0);
+            if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0);
+          } else {
+            if (!hasFinally) throw new Error("try statement without catch or finally");
+            if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
           }
         }
       }
     },
+<<<<<<< HEAD
     abrupt: function abrupt(t, e) {
       for (var r = this.tryEntries.length - 1; r >= 0; --r) {
         var o = this.tryEntries[r];
@@ -1863,10 +2249,45 @@ function _regeneratorRuntime() {
             resetTryEntry(r);
           }
           return o;
+=======
+    abrupt: function abrupt(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+      finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null);
+      var record = finallyEntry ? finallyEntry.completion : {};
+      return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record);
+    },
+    complete: function complete(record, afterLoc) {
+      if ("throw" === record.type) throw record.arg;
+      return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel;
+    },
+    finish: function finish(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel;
+      }
+    },
+    "catch": function _catch(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if ("throw" === record.type) {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         }
       }
       throw new Error("illegal catch attempt");
     },
+<<<<<<< HEAD
     delegateYield: function delegateYield(e, r, n) {
       return this.delegate = {
         iterator: values(e),
@@ -1875,6 +2296,16 @@ function _regeneratorRuntime() {
       }, "next" === this.method && (this.arg = t), y;
     }
   }, e;
+=======
+    delegateYield: function delegateYield(iterable, resultName, nextLoc) {
+      return this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      }, "next" === this.method && (this.arg = undefined), ContinueSentinel;
+    }
+  }, exports;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 }
 module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -1932,6 +2363,26 @@ module.exports = _superPropBase, module.exports.__esModule = true, module.export
 
 /***/ }),
 
+<<<<<<< HEAD
+=======
+/***/ "../node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!*******************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "../node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "../node_modules/@babel/runtime/helpers/iterableToArray.js");
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "../node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 /***/ "../node_modules/@babel/runtime/helpers/toPrimitive.js":
 /*!*************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/toPrimitive.js ***!
@@ -1939,6 +2390,7 @@ module.exports = _superPropBase, module.exports.__esModule = true, module.export
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
+<<<<<<< HEAD
 function toPrimitive(t, r) {
   if ("object" != _typeof(t) || !t) return t;
   var e = t[Symbol.toPrimitive];
@@ -1950,6 +2402,19 @@ function toPrimitive(t, r) {
   return ("string" === r ? String : Number)(t);
 }
 module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+=======
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
 /***/ }),
 
@@ -1961,11 +2426,19 @@ module.exports = toPrimitive, module.exports.__esModule = true, module.exports["
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "../node_modules/@babel/runtime/helpers/toPrimitive.js");
+<<<<<<< HEAD
 function toPropertyKey(t) {
   var i = toPrimitive(t, "string");
   return "symbol" == _typeof(i) ? i : String(i);
 }
 module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+=======
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 
 /***/ }),
 
@@ -1975,6 +2448,7 @@ module.exports = toPropertyKey, module.exports.__esModule = true, module.exports
   \********************************************************/
 /***/ ((module) => {
 
+<<<<<<< HEAD
 function _typeof(o) {
   "@babel/helpers - typeof";
 
@@ -1983,6 +2457,16 @@ function _typeof(o) {
   } : function (o) {
     return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
   }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+=======
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(obj);
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 }
 module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -2080,7 +2564,10 @@ var _events = _interopRequireDefault(__webpack_require__(/*! elementor-utils/eve
 var _filesUploadHandler = _interopRequireDefault(__webpack_require__(/*! ../editor/utils/files-upload-handler */ "../assets/dev/js/editor/utils/files-upload-handler.js"));
 var _templateControls = _interopRequireDefault(__webpack_require__(/*! ./new-template/template-controls.js */ "../assets/dev/js/admin/new-template/template-controls.js"));
 var _jsonUploadWarningMessage = __webpack_require__(/*! elementor-utils/json-upload-warning-message */ "../assets/dev/js/utils/json-upload-warning-message.js");
+<<<<<<< HEAD
 var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/floating-buttons/assets/js/floating-buttons/admin/module */ "../modules/floating-buttons/assets/js/floating-buttons/admin/module.js"));
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 (function ($) {
   var ElementorAdmin = elementorModules.ViewModule.extend({
     maintenanceMode: null,
@@ -2165,6 +2652,7 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
           });
         });
       });
+<<<<<<< HEAD
       $('.e-notice--cta.e-notice--dismissible[data-notice_id="plugin_image_optimization"] a.e-button--cta').on('click', function () {
         elementorCommon.ajax.addRequest('elementor_image_optimization_campaign', {
           data: {
@@ -2186,6 +2674,8 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
           }
         });
       });
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       $('#elementor-clear-cache-button').on('click', function (event) {
         event.preventDefault();
         var $thisButton = $(this);
@@ -2345,6 +2835,14 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
           }
         }).show();
       });
+<<<<<<< HEAD
+=======
+      $('.elementor_css_print_method select').on('change', function () {
+        var $descriptions = $('.elementor-css-print-method-description');
+        $descriptions.hide();
+        $descriptions.filter('[data-value="' + $(this).val() + '"]').show();
+      }).trigger('change');
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       $('.elementor_google_font select').on('change', function () {
         $('.elementor_font_display').toggle('1' === $(this).val());
       }).trigger('change');
@@ -2360,9 +2858,12 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
       if (elementorCommon.config.experimentalFeatures['landing-pages']) {
         new _module.default();
       }
+<<<<<<< HEAD
       if (elementorCommon.config.experimentalFeatures.container) {
         new _module3.default();
       }
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
       this.templateControls = new _templateControls.default();
       new _module2.default();
     },
@@ -2396,9 +2897,13 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
       });
     },
     initTemplatesImport: function initTemplatesImport() {
+<<<<<<< HEAD
       var _elementorAdminConfig, _elementorAdminConfig2;
       var canImport = elementorAdminConfig.user.is_administrator || ((_elementorAdminConfig = (_elementorAdminConfig2 = elementorAdminConfig.user.restrictions) === null || _elementorAdminConfig2 === void 0 ? void 0 : _elementorAdminConfig2.includes('json-upload')) !== null && _elementorAdminConfig !== void 0 ? _elementorAdminConfig : false);
       if (!canImport || !elementorCommon.elements.$body.hasClass('post-type-elementor_library')) {
+=======
+      if (!elementorCommon.elements.$body.hasClass('post-type-elementor_library')) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
         return;
       }
       var self = this,
@@ -2413,6 +2918,7 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
       $importButton.on('click', function () {
         $('#elementor-import-template-area').toggle();
       });
+<<<<<<< HEAD
       var messages = {
         jsonUploadWarning: {
           shown: false
@@ -2425,12 +2931,23 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
       $importForm.on('submit', /*#__PURE__*/function () {
         var _ref4 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(event) {
           var hasImportedFiles, areUnfilteredFilesEnabled, enableUnfilteredFilesModal;
+=======
+      var messageShown = false;
+      var originalButtonValue = $importNowButton[0].value;
+      $importForm.on('submit', /*#__PURE__*/function () {
+        var _ref4 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(event) {
+          var enableUnfilteredFilesModal;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
           return _regenerator.default.wrap(function _callee$(_context) {
             while (1) switch (_context.prev = _context.next) {
               case 0:
                 $importNowButton[0].disabled = true;
                 $importNowButton[0].value = __('Importing...', 'elementor');
+<<<<<<< HEAD
                 if (messages.jsonUploadWarning.shown) {
+=======
+                if (messageShown) {
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
                   _context.next = 16;
                   break;
                 }
@@ -2443,7 +2960,11 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
                   waitForSetViewed: true
                 });
               case 7:
+<<<<<<< HEAD
                 messages.jsonUploadWarning.shown = true;
+=======
+                messageShown = true;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
                 $importForm.trigger('submit');
                 _context.next = 15;
                 break;
@@ -2455,23 +2976,37 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
               case 15:
                 return _context.abrupt("return");
               case 16:
+<<<<<<< HEAD
                 hasImportedFiles = $importFormFileInput[0].files.length;
                 areUnfilteredFilesEnabled = elementorCommon.config.filesUpload.unfilteredFiles;
                 if (!(hasImportedFiles && !areUnfilteredFilesEnabled && !messages.enableUnfilteredFiles.shown)) {
                   _context.next = 23;
+=======
+                if (!($importFormFileInput[0].files.length && !elementorCommon.config.filesUpload.unfilteredFiles)) {
+                  _context.next = 21;
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
                   break;
                 }
                 event.preventDefault();
                 enableUnfilteredFilesModal = _filesUploadHandler.default.getUnfilteredFilesNotEnabledImportTemplateDialog(function () {
+<<<<<<< HEAD
                   messages.enableUnfilteredFiles.shown = true;
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
                   $importForm.trigger('submit');
                 });
                 enableUnfilteredFilesModal.show();
                 return _context.abrupt("return");
+<<<<<<< HEAD
               case 23:
                 messages.jsonUploadWarning.shown = false;
                 messages.enableUnfilteredFiles.shown = false;
               case 25:
+=======
+              case 21:
+                messageShown = false;
+              case 22:
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
               case "end":
                 return _context.stop();
             }

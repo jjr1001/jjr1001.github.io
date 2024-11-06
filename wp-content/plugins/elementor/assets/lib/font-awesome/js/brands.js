@@ -385,8 +385,11 @@
 	"themeco",
 	"themeisle",
 	"think-peaks",
+<<<<<<< HEAD
 	"threads",
 	"threads-square",
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 	"tiktok",
 	"trade-federation",
 	"trello",
@@ -445,8 +448,11 @@
 	"xbox",
 	"xing",
 	"xing-square",
+<<<<<<< HEAD
 	"x-twitter",
 	"x-twitter-square",
+=======
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
 	"y-combinator",
 	"yahoo",
 	"yammer",
@@ -459,4 +465,8 @@
 	"youtube-square",
 	"zhihu"
 	]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7b25a0ec9f494c2c35ff35e9ef68eb5652df1fe4
